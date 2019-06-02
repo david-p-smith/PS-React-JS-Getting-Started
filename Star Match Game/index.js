@@ -1,6 +1,6 @@
 // STAR MATCH - V2
 
-const Number = props => (
+const PlayNumber = props => (
     <button className="number">{props.number}</button>
   );
   
@@ -19,7 +19,7 @@ const Number = props => (
           </div>
           <div className="right">
               {utils.range(1, 9).map(number =>
-                <Number key={number} number={number} />
+                <PlayNumber key={number} number={number} />
             )}
           </div>
         </div>
