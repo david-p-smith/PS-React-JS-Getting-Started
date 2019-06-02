@@ -1,7 +1,17 @@
 // STAR MATCH - V2
 
-const PlayNumber = props => (
-    <button className="number">{props.number}</button>
+const StarsDisplay = props => (
+    <>
+      {utils.range(1, props.count).map(starId =>
+            <div key={starId} className="star" />
+      )}
+    </>
+  );
+  
+  const PlayNumber = props => (
+    <button className="number" onClick={() => console.log('Num', props.number)}>
+      {props.number}
+    </button>
   );
   
   const StarMatch = () => {
@@ -13,9 +23,7 @@ const PlayNumber = props => (
         </div>
         <div className="body">
           <div className="left">
-            {utils.range(1, stars).map(starId =>
-                <div key={starId} className="star" />
-            )}
+            <StarsDisplay count={stars}/>
           </div>
           <div className="right">
               {utils.range(1, 9).map(number =>
