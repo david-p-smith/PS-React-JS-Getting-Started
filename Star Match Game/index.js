@@ -1,7 +1,11 @@
-// v1 STAR MATCH - Starting Template
+// STAR MATCH - V2
 
-const StarMatch = () => {
-    const stars = utils.random(1,9);
+const Number = props => (
+    <button className="number">{props.number}</button>
+  );
+  
+  const StarMatch = () => {
+      const [stars, setStars] = useState(utils.random(1, 9));
     return (
       <div className="game">
         <div className="help">
@@ -9,13 +13,13 @@ const StarMatch = () => {
         </div>
         <div className="body">
           <div className="left">
-            {utils.range(1,stars).map(starId => 
-              <div key={starId} className="star"/>
+            {utils.range(1, stars).map(starId =>
+                <div key={starId} className="star" />
             )}
           </div>
           <div className="right">
-            {utils.range(1,9).map(numberId =>
-              <button key={numberId} className="number">{numberId}</button>
+              {utils.range(1, 9).map(number =>
+                <Number key={number} number={number} />
             )}
           </div>
         </div>
@@ -62,4 +66,4 @@ const StarMatch = () => {
     },
   };
   
-  ReactDOM.render(<StarMatch />, mountNode);  
+  ReactDOM.render(<StarMatch />, mountNode);
